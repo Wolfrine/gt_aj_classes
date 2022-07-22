@@ -7,6 +7,32 @@
   width: 100%;
 }
 
- * {
-  box-shadow: 0 0 1px;
+.showcase-header{
+  font-size: 54px;
+  margin: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.demoLec{
+  font-size: 36px;
+  color: black;
+}
+
+.sections{
+  padding: 1em;
+  color: white;
+}
+
+.spn1{
+  background-color: #5697EF;
+}
+.spn2{
+  background-color: #A2D409;
+}
+.spn3{
+  background-color: #647F34;
+}
+
+//  * {
+//   box-shadow: 0 0 1px;
+// }

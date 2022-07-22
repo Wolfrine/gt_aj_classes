@@ -1,1 +1,41 @@
-<p>login-page works!</p>
+<mat-grid-list cols="5" rowHeight="420px">
+  <mat-grid-tile></mat-grid-tile>
+
+  <mat-grid-tile colspan="3">
+    <div class="cardcont">
+
+      <div class="signintext logocnt">
+        <img src="assets/images/Gt_circular.png" class="logo">
+      </div>
+
+      <p class="signintext">Sign in to Growth Tutorials</p>
+      <mat-card class="loginCard">
+
+        <!-- Username -->
+        <mat-form-field color="primary">
+          <mat-label class="placeholder">Enter your Email</mat-label>
+          <input matInput [type]="'text'">
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field color="blue">
+          <mat-label class="placeholder">Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Sign in button -->
+        <mat-card-actions>
+          <button mat-button class="signinbtn">Sign in</button>
+        </mat-card-actions>
+
+
+      </mat-card>
+    </div>
+
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
