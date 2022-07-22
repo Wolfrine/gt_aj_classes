@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service'
 
 @Component({
   selector: 'app-demo-test',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoTestComponent implements OnInit {
 
-  constructor() { }
+  apiObj = {};
+
+  constructor(private appservice: AppService) { }
 
   ngOnInit(): void {
+    console.log('API call');
+    this.appservice.getTest().subscribe(apiObj => (this.apiObj = apiObj));
   }
 
 }
