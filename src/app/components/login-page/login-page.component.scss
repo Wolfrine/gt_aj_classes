@@ -1,59 +1,66 @@
-.signin-section{
+.signin-section {
   background-color: aliceblue;
 }
 
-.logo{
+.logo {
   height: 120px;
   width: 120px;
 }
 
-.logocnt{
+.logocnt {
   border-radius: 50%;
 }
 
-.signintext{
+.signintext {
   text-align: center;
   font-size: 24px;
   font-weight: 300;
   letter-spacing: -0.5px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  margin: 24px 0 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  margin: 18px 0 0 0;
 }
 
-.cardcont{
+.cardcont {
   width: 350px;
 }
 
-.loginCard{
+.loginCard {
   margin: 24px 0 0 0;
   background-color: #f6f8fa;
   color: #24292f;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0, 0, 0, .1);
   padding: 24px;
 
-  .mat-card-subtitle{
+  .mat-card-subtitle {
     color: black;
   }
 
-  .mat-form-field{
-    width: 100%;  
+  .mat-form-field {
+    width: 100%;
   }
-  ::ng-deep.mat-input-element::placeholder, .placeholder {
-    color: rgba(0,0,0,.4);
+
+  ::ng-deep.mat-input-element::placeholder,
+  .placeholder {
+    color: rgba(0, 0, 0, .4);
   }
 
   ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: rgba(0,0,0,.2) !important;
-  } 
+    background-color: rgba(0, 0, 0, .2) !important;
+  }
 
-  
-  .signinbtn{
+
+  .signinbtn {
     width: 100%;
-    background-color: green;
+    background-color: #004644;
     color: white;
     font-size: 12px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 }
 
+
+
+// * {
+//   box-shadow: 0 0 1px;
+// }
