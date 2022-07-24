@@ -1,10 +1,20 @@
+a {
+  color: #0969da;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .signin-section {
   background-color: aliceblue;
 }
 
 .logo {
-  height: 120px;
-  width: 120px;
+  height: 160px;
+  width: 160px;
 }
 
 .logocnt {
@@ -57,6 +67,23 @@
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+}
+
+.enroll {
+  width: 350px;
+  padding: 12px 0px;
+  text-align: center;
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, .4);
+}
+
+.loaderCont {
+  opacity: 0.4;
+
+  .loader {
+    margin: 0 0 10px 0;
+  }
+
 }
 
 
