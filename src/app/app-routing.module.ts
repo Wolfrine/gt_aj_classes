@@ -8,8 +8,8 @@ import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { DemoTestComponent } from './demo-test/demo-test.component';
 
 const routes: Routes = [
-  { path: '', component: ShowcaseComponent },
-  { path: 'home', component: LandingDashboardComponent },
+  { path: 'home', component: ShowcaseComponent },
+  { path: '', component: LandingDashboardComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'demo', component: DemoTestComponent }
 ];
