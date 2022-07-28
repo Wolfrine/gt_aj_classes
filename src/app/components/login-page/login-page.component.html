@@ -66,7 +66,7 @@
 <!-- Loading messages -->
 <mat-grid-list cols="1" rowHeight="60px" *ngIf="message" class="loaderCont">
   <mat-grid-tile>
-    <p>{{message}}</p>&nbsp;
-    <img src="assets/images/loader.gif" height="25px" width="25px" class="loader">
+    <p>{{message.text}}</p>&nbsp;
+    <img src="assets/images/loader.gif" height="25px" width="25px" class="loader" *ngIf="message.status != 'error'">
   </mat-grid-tile>
 </mat-grid-list>

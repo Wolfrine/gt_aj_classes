@@ -8,11 +8,11 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  rootURL = 'http://localhost:3000/';
+  rootURL = 'http://localhost:3000';
 
-  getTest() {
+  g_login(postObj: {}) {
     console.log('API callllled');
-    return this.http.get(this.rootURL);
+    return this.http.post(this.rootURL + '/api/auth/g_login/', { postObj });
   }
 
 }
