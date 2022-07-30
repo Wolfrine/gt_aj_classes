@@ -1,72 +1,74 @@
 <!-- Logo and Sign In section -->
 <mat-grid-list cols="5" rowHeight="450px">
-  <mat-grid-tile></mat-grid-tile>
-  <mat-grid-tile colspan="3">
-    <div class="cardcont">
-      <div class="signintext logocnt">
-        <img src="assets/images/GT-alternate-1-modified.png" class="logo">
-      </div>
-      <p class="signintext">Sign in to Growth Tutorials</p>
-      <mat-card class="loginCard">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <div class="cardcont">
+            <div class="signintext logocnt">
+                <img src="assets/images/GT-alternate-1-modified.png" class="logo">
+            </div>
+            <p class="signintext">Sign in to Growth Tutorials</p>
+            <mat-card class="loginCard">
 
-        <!-- Username -->
-        <mat-form-field color="primary">
-          <mat-label class="placeholder">Email address</mat-label>
-          <input matInput [type]="'text'">
-        </mat-form-field>
+                <!-- Username -->
+                <mat-form-field color="primary">
+                    <mat-label class="placeholder">Email address</mat-label>
+                    <input matInput [type]="'text'">
+                </mat-form-field>
 
-        <!-- Password -->
-        <mat-form-field color="blue">
-          <mat-label class="placeholder">Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
+                <!-- Password -->
+                <mat-form-field color="blue">
+                    <mat-label class="placeholder">Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
 
-        <!-- Sign in button -->
-        <mat-card-actions>
-          <button mat-button class="signinbtn">Sign in</button>
-        </mat-card-actions>
+                <!-- Sign in button -->
+                <mat-card-actions>
+                    <button mat-button class="signinbtn">Sign in</button>
+                </mat-card-actions>
 
-      </mat-card>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
+            </mat-card>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
 </mat-grid-list>
 
 <!-- OR -->
 <mat-grid-list cols="1" rowHeight="40px">
-  <mat-grid-tile>OR</mat-grid-tile>
+    <mat-grid-tile>OR</mat-grid-tile>
 </mat-grid-list>
 
 <!-- Google login  -->
 <mat-grid-list cols="1" rowHeight="40px">
-  <mat-grid-tile colspan="1" class="glogin">
-    <div id="g_id_onload" data-client_id="17604544554-j685vnh4ianqrfi5cbnraljeo4u980l9.apps.googleusercontent.com"
-      data-context="signin" data-ux_mode="popup" data-auto_prompt="false" data-callback="handleCredentialResponse">
-    </div>
-    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
-      data-size="large" data-logo_alignment="left" data-width="350">
-    </div>
-  </mat-grid-tile>
+    <mat-grid-tile colspan="1" class="glogin">
+        <div id="g_id_onload" data-client_id="17604544554-j685vnh4ianqrfi5cbnraljeo4u980l9.apps.googleusercontent.com"
+            data-context="signin" data-ux_mode="popup" data-auto_prompt="false"
+            data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+            data-size="large" data-logo_alignment="left" data-width="350">
+        </div>
+    </mat-grid-tile>
 </mat-grid-list>
 <br>
 <mat-grid-list cols="3" rowHeight="60px">
-  <mat-grid-tile colspan="1"></mat-grid-tile>
-  <mat-grid-tile colspan="1">
-    <div class="enroll">New here?
-      <a href="/enroll">Create an account</a>.
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <div class="enroll">New here?
+            <a href="/enroll">Create an account</a>.
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1"></mat-grid-tile>
 </mat-grid-list>
 
 <!-- Loading messages -->
-<mat-grid-list cols="1" rowHeight="60px" *ngIf="message" class="loaderCont">
-  <mat-grid-tile>
-    <p>{{message}}</p>&nbsp;
-    <img src="assets/images/loader.gif" height="25px" width="25px" class="loader">
-  </mat-grid-tile>
+<mat-grid-list cols="1" rowHeight="60px" *ngIf="message_body" class="loaderCont">
+    <mat-grid-tile>
+        <p [style.color]="message_body.status == 'error' ? 'red' : 'black'">{{message_body.message}}</p>&nbsp;
+        <img src="assets/images/loader.gif" height="25px" width="25px" class="loader"
+            *ngIf="message_body.status != 'error'">
+    </mat-grid-tile>
 </mat-grid-list>
