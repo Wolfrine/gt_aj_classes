@@ -12,7 +12,7 @@ export class LoginPageComponent implements OnInit {
     hide = true;
 
     UserData: any;
-    message: any;
+    message_body: any;
 
     login: any;
     check_auto_login: any;
@@ -21,8 +21,8 @@ export class LoginPageComponent implements OnInit {
 
     ngOnInit(): void {
 
-        this.message = {
-            text: "",
+        this.message_body = {
+            message: "",
             status: "error"
         };
         var i = 1;
@@ -33,15 +33,15 @@ export class LoginPageComponent implements OnInit {
 
 
         this.login = function () {
-            this.message.text = "Verifying"; this.message.status = "checking";
+            this.message_body.message = "Verifying"; this.message_body.status = "checking";
 
             if (this.UserData) {
                 this.UserData = JSON.parse(this.UserData);
 
                 this.appservice.g_login(this.UserData).subscribe(x =>
-                    this.message = x
+                    this.message_body = x
                 );
-                this.message = "Authentication successfull! Signing in ";
+                this.message_body = "Authentication successfull! Signing in ";
             }
         }
 
