@@ -8,7 +8,7 @@ export class AppService {
 
     constructor(private http: HttpClient) { }
 
-    rootURL = 'https://growthtutorials.in/.in/api';
+    rootURL = 'https://growthtutorials.in/api';
 
     // Local
     // rootURL = 'http://localhost:3000/api';
