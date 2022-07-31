@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AppService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  rootURL = 'http://localhost:3000';
+    rootURL = 'https://growthtutorials.in/.in/api';
 
-  g_login(postObj: {}) {
-    console.log('API callllled');
-    return this.http.post(this.rootURL + '/api/auth/g_login/', { postObj });
-  }
+    // Local
+    // rootURL = 'http://localhost:3000/api';
+
+    g_login(postObj: {}) {
+        console.log('API callllled');
+        return this.http.post(this.rootURL + '/auth/g_login/', { postObj });
+    }
 
 }
