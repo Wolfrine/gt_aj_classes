@@ -8,10 +8,10 @@ export class AppService {
 
     constructor(private http: HttpClient) { }
 
-    rootURL = 'https://growthtutorials.in/api';
+    //rootURL = 'https://growthtutorials.in/api';
 
     // Local
-    // rootURL = 'http://localhost:3000/api';
+    rootURL = 'http://localhost:3000/api';
 
     g_login(postObj: {}) {
         console.log('API callllled');

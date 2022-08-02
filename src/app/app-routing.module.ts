@@ -8,14 +8,14 @@ import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { DemoTestComponent } from './demo-test/demo-test.component';
 
 const routes: Routes = [
-  { path: 'home', component: ShowcaseComponent },
-  { path: '', component: LandingDashboardComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'demo', component: DemoTestComponent }
+    { path: '', component: ShowcaseComponent },
+    { path: 'home', component: ComponentsComponent, children: [{ path: '', component: LandingDashboardComponent }] },
+    { path: 'login', component: LoginPageComponent },
+    { path: 'demo', component: DemoTestComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

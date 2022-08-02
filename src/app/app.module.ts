@@ -20,32 +20,44 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DemoTestComponent } from './demo-test/demo-test.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ComponentsComponent,
-    LoginPageComponent,
-    LandingDashboardComponent,
-    ShowcaseComponent,
-    DemoTestComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatGridListModule,
-    MatCardModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatFormFieldModule,
-    MatInputModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ComponentsComponent,
+        LoginPageComponent,
+        LandingDashboardComponent,
+        ShowcaseComponent,
+        DemoTestComponent,
+        NavBarComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatGridListModule,
+        MatCardModule,
+        MatButtonModule,
+        MatRippleModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSidenavModule,
+        MatMenuModule,
+        MatExpansionModule,
+        MatDatepickerModule,
+        MatDividerModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

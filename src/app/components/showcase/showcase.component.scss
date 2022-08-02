@@ -1,38 +1,19 @@
-.example-spacer {
-  flex: 1 1 auto;
+.center {
+    text-align: center;
+    padding-top: 10%;
 }
 
-
-.menu{
-  width: 100%;
+.header {
+    font-size: 64px;
+    color: green;
 }
 
-.showcase-header{
-  font-size: 54px;
-  margin: 8px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.soon {
+    font-size: 32px;
+    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(10, 10, 10, .6);
 }
 
-.demoLec{
-  font-size: 36px;
-  color: black;
+.p_hidden {
+    opacity: 0;
 }
-
-.sections{
-  padding: 1em;
-  color: white;
-}
-
-.spn1{
-  background-color: #5697EF;
-}
-.spn2{
-  background-color: #A2D409;
-}
-.spn3{
-  background-color: #647F34;
-}
-
-//  * {
-//   box-shadow: 0 0 1px;
-// }

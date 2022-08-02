@@ -1,0 +1,75 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.navbar {
+    background-color: #004644;
+    font-family: liberation-serif, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.material-icons {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.profile_name {
+    font-size: 14px;
+    padding: 0 8px;
+}
+
+.profile_icon {
+    font-size: 36px;
+    line-height: 36px;
+    height: auto;
+    width: auto
+}
+
+::ng-deep.mat-menu-panel {
+    min-width: 200px !important;
+    max-width: 200px !important;
+}
+
+.mat-menu-item {
+    font-size: 14px !important;
+}
+
+.title {
+    padding: 0 8px;
+}
+
+.side-container {
+    height: calc(100% - 64px);
+    position: absolute;
+    top: 64px;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav {
+    min-width: 300px;
+    background-color: #f7f7f7;
+}
+
+.mat-menu-panel {
+    background-color: #f7f7f7 !important;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 40px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    z-index: 99;
+    padding: 40px 0 0 0;
+    transition: 0.3s;
+}

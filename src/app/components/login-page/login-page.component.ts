@@ -38,10 +38,18 @@ export class LoginPageComponent implements OnInit {
             if (this.UserData) {
                 this.UserData = JSON.parse(this.UserData);
 
-                this.appservice.g_login(this.UserData).subscribe(x =>
-                    this.message_body = x
+                this.appservice.g_login(this.UserData).subscribe(x => {
+                    this.message_body = x;
+
+                    if (this.message_body['status'] == 'success') {
+
+                        this.message_body.message = "Authentication successfull! Signing in "
+                        setTimeout(() => {
+                            this.router.navigate(['home']);
+                        }, 1000);
+                    }
+                }
                 );
-                this.message_body = "Authentication successfull! Signing in ";
             }
         }
 
