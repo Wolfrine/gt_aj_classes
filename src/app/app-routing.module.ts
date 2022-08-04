@@ -6,12 +6,14 @@ import { LandingDashboardComponent } from './components/landing-dashboard/landin
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { DemoTestComponent } from './demo-test/demo-test.component';
+import { ErrorComponent } from './components/common/error/error.component';
 
 const routes: Routes = [
     { path: '', component: ShowcaseComponent },
     { path: 'home', component: ComponentsComponent, children: [{ path: '', component: LandingDashboardComponent }] },
     { path: 'login', component: LoginPageComponent },
-    { path: 'demo', component: DemoTestComponent }
+    { path: 'demo', component: DemoTestComponent },
+    { path: 'error', component: ErrorComponent }
 ];
 
 @NgModule({

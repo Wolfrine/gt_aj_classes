@@ -1,5 +1,4 @@
 <div class="loader" *ngIf="pageLoad">
-    <?xml version="1.0" encoding="utf-8"?>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         style="margin: auto; background: none; display: block; shape-rendering: auto;" width="400px" height="400px"
         viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -88,19 +87,20 @@
 </div>
 
 <mat-toolbar color="primary" class="navbar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" mat-button
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" mat-button title="Menu"
         (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
+        <img src="assets/images/Gt logo.png" height="40px" width="40px">
+        <!-- <mat-icon>menu</mat-icon> -->
     </button>
     <span class="title">Growth Tutorials</span>
     <span class="example-spacer"></span>
-    <span class="profile_name">{{acc_name}}</span>
+    <span class="profile_name">{{userDetails.fullname}}</span>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon class="profile_icon">account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="profile-menu">
         <button mat-menu-item>
-            <span>Signed in as <b>{{acc_name}}</b></span>
+            <span>Signed in as <b>{{userDetails.acc_type}}</b></span>
         </button>
         <mat-divider></mat-divider>
         <button mat-menu-item>
@@ -129,5 +129,4 @@
 
         </mat-accordion>
     </mat-drawer>
-
 </mat-drawer-container>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from './../../../app.service';
+import { Router, RouterModule, Routes } from '@angular/router';
+
 
 @Component({
     selector: 'app-nav-bar',
@@ -7,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+    userDetails: any;
 
-    constructor() { }
+    constructor(private router: Router, private appservice: AppService) { }
 
-    acc_name = "Guest";
     pageLoad = 1;
 
     public open(event: any, item: any) {
@@ -18,6 +21,25 @@ export class NavBarComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.userDetails = {
+            fullname: "",
+            firstname: "",
+            acc_type: "",
+            acc_img: "",
+            id: 0
+        };
+
+        this.appservice.getSessionData().subscribe(x => {
+            this.userDetails = x;
+            if (this.userDetails.acc_type == "") {
+                this.router.navigate(['error']);
+            }
+        });
+
+        console.log(this.userDetails);
+
+
+
         setTimeout(() => {
             this.pageLoad = 0;
         }, 500);

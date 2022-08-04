@@ -26,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
+import { ErrorComponent } from './components/common/error/error.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { MatDividerModule } from '@angular/material/divider';
         LandingDashboardComponent,
         ShowcaseComponent,
         DemoTestComponent,
-        NavBarComponent
+        NavBarComponent,
+        ErrorComponent
     ],
     imports: [
         BrowserModule,
