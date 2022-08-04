@@ -17,10 +17,10 @@ export class AppService {
 
     constructor(private http: HttpClient) { }
 
-    //rootURL = 'https://growthtutorials.in/api';
+    rootURL = 'https://growthtutorials.in/api';
 
     // Local
-    rootURL = 'http://localhost:3000/api';
+    //rootURL = 'http://localhost:3000/api';
 
     g_login(postObj: {}) {
         return this.http.post(this.rootURL + '/auth/g_login/', { postObj });
