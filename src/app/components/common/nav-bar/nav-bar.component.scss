@@ -68,8 +68,20 @@
     left: 0;
     height: calc(100vh - 40px);
     width: 100%;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: #F1C40F;
     z-index: 99;
     padding: 40px 0 0 0;
     transition: 0.3s;
+
+    .svgloader {
+        margin: auto;
+        background: rgba(241, 242, 243, 0);
+        display: block;
+        shape-rendering: auto;
+        position: absolute;
+        height: 135px;
+        width: 135px;
+        top: calc(50% - 72.5px);
+        left: calc(50% - 72.5px);
+    }
 }

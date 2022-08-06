@@ -13,7 +13,9 @@ const routes: Routes = [
     { path: 'home', component: ComponentsComponent, children: [{ path: '', component: LandingDashboardComponent }] },
     { path: 'login', component: LoginPageComponent },
     { path: 'demo', component: DemoTestComponent },
-    { path: 'error', component: ErrorComponent }
+    { path: 'error', component: ErrorComponent },
+    { path: '404', component: ErrorComponent },
+    { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({

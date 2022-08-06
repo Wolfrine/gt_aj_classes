@@ -11,6 +11,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
     userDetails: any;
+    signOut: any;
 
     constructor(private router: Router, private appservice: AppService) { }
 
@@ -21,6 +22,7 @@ export class NavBarComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
         this.userDetails = {
             fullname: "",
             firstname: "",
@@ -29,20 +31,22 @@ export class NavBarComponent implements OnInit {
             id: 0
         };
 
+        setTimeout(() => {
+            this.pageLoad = 0;
+        }, 1500);
+
         this.appservice.getSessionData().subscribe(x => {
             this.userDetails = x;
-            if (this.userDetails.acc_type == "") {
+            if (!this.userDetails['acc_type']) {
                 this.router.navigate(['error']);
             }
         });
 
-        console.log(this.userDetails);
 
+        this.signOut = function () {
+            this.appservice.closeSession().subscribe(x => { localStorage.clear(); this.router.navigate(['login']); })
+        }
 
-
-        setTimeout(() => {
-            this.pageLoad = 0;
-        }, 500);
     }
 
 }
