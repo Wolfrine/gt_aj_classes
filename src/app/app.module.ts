@@ -27,6 +27,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { ErrorComponent } from './components/common/error/error.component';
+import { FooterComponent } from './components/common/footer/footer.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { SyllabusComponent } from './components/landing-dashboard/syllabus/syllabus.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +40,9 @@ import { ErrorComponent } from './components/common/error/error.component';
         ShowcaseComponent,
         DemoTestComponent,
         NavBarComponent,
-        ErrorComponent
+        ErrorComponent,
+        FooterComponent,
+        SyllabusComponent
     ],
     imports: [
         BrowserModule,
@@ -57,7 +62,8 @@ import { ErrorComponent } from './components/common/error/error.component';
         MatMenuModule,
         MatExpansionModule,
         MatDatepickerModule,
-        MatDividerModule
+        MatDividerModule,
+        MatChipsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

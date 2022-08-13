@@ -31,13 +31,28 @@ export class NavBarComponent implements OnInit {
             id: 0
         };
 
-        setTimeout(() => {
-            this.pageLoad = 0;
-        }, 1500);
+        this.appservice.getSessionData().subscribe({
+            next: (v: any) => {
+                if (v != null && v.hasOwnProperty('acc_type_code')) {
+                    v["acc_type_code"] = v["acc_type_code"].split(",");
+                    this.appservice.userDetails.next(v);
+                }
+                this.userDetails = v;
+                this.appservice.userDetails = this.userDetails;
+                if (this.userDetails == null) {
+                    this.router.navigate(['error']);
+                }
+                else {
+                    if (!this.userDetails['acc_type'] && this.userDetails['acc_type'] != "") {
+                        this.router.navigate(['error']);
+                    }
 
-        this.appservice.getSessionData().subscribe(x => {
-            this.userDetails = x;
-            if (!this.userDetails['acc_type']) {
+                    setTimeout(() => {
+                        this.pageLoad = 0;
+                    }, 500);
+                }
+            },
+            error: (e) => {
                 this.router.navigate(['error']);
             }
         });

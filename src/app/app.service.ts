@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -10,15 +11,13 @@ export class AppService {
     KEY_TO_READ = environment.production;
 
     // Default empty structure for User details as obtained after sign in
-    userDetails = {
-        fullname: "Guest",
-        firstname: "",
-        acc_type: "",
-        acc_img: "",
-        id: 0
-    };
+    userDetails = new Subject();
 
-    constructor(private http: HttpClient) { }
+    // value["acc_type_code"] = value["acc_type_code"].split(",");
+    // this.userDetails.next(value);
+
+    constructor(private http: HttpClient) {
+    }
 
 
     //rootURL = 'https://growthtutorials.in/api';

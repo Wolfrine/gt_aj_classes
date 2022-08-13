@@ -26,9 +26,14 @@
         <mat-icon class="profile_icon">account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="profile-menu">
-        <button mat-menu-item>
-            <span>Signed in as <b>{{userDetails.acc_type}}</b></span>
-        </button>
+        <div class="menu_item">Signed in as</div>
+        <!-- <b>{{userDetails.acc_type}}</b> -->
+        <div class="chips">
+            <mat-chip-list class="roles" *ngFor="let role of userDetails.acc_type.split(','); index as i;">
+                <mat-chip>{{role}} </mat-chip>
+            </mat-chip-list>
+        </div>
+
         <mat-divider></mat-divider>
         <button mat-menu-item>
             <span>Profile</span>
@@ -44,7 +49,15 @@
 </mat-toolbar>
 <mat-drawer-container class="side-container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
-        <mat-accordion class="example-headers-align">
+        <mat-accordion class="accordion">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="$event.stopPropagation();" (click)="open($event, 'asd')">
+                        <mat-icon>verified</mat-icon>
+                        Attendance
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                     <mat-panel-title (click)="$event.stopPropagation();" (click)="open($event, 'asd')">
@@ -55,5 +68,7 @@
             </mat-expansion-panel>
 
         </mat-accordion>
+
+        <div class="drawer_footer">© 2022 Growth Tutorials</div>
     </mat-drawer>
 </mat-drawer-container>

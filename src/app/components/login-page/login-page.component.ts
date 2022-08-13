@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { AppService } from '../../app.service';
-import { Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'app-login-page',
@@ -15,22 +14,17 @@ export class LoginPageComponent implements OnInit {
 
     UserData: any;
     message_body: any;
-    g_b: any;
 
     login: any;
     check_auto_login: any;
 
-    constructor(private router: Router, private appservice: AppService, @Inject(DOCUMENT) document: Document) {
-
+    constructor(private router: Router, private appservice: AppService, private titleService: Title) {
+        this.titleService.setTitle("Sign in to Growth Tutorials");
     }
 
 
 
     ngOnInit(): void {
-        this.g_b = document.getElementById('g_button')!.childNodes.length;
-        console.log(this.g_b);
-
-
         this.message_body = {
             message: "",
             status: "error"
@@ -52,21 +46,24 @@ export class LoginPageComponent implements OnInit {
             if (this.UserData) {
                 this.UserData = JSON.parse(this.UserData);
 
-                this.appservice.g_login(this.UserData).subscribe(x => {
-                    this.message_body = x;
+                this.appservice.g_login(this.UserData).subscribe({
+                    next: (x) => {
+                        this.message_body = x;
 
-                    this.appservice.setSessionData(x).subscribe(y => {
-                        console.log(y);
-                        if (this.message_body['status'] == 'success') {
-                            setTimeout(() => {
-                                this.router.navigate(['home']);
-                            }, 1000);
-                        }
-                    });
-
-
-                }
-                );
+                        this.appservice.setSessionData(x).subscribe(y => {
+                            if (this.message_body['status'] == 'success') {
+                                setTimeout(() => {
+                                    this.router.navigate(['home']);
+                                }, 1000);
+                            }
+                        });
+                    },
+                    error: (e) => {
+                        this.message_body.message = "Error connecting. Kindly try again later";
+                        this.message_body.status = "error";
+                    },
+                    complete: () => { console.info('complete') }
+                });
             }
         }
     }

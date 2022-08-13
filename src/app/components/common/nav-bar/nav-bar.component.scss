@@ -34,9 +34,22 @@
     font-size: 14px !important;
 }
 
+.menu_item {
+    padding: 4px 16px;
+}
+
+.chips {
+    padding: 0 16px;
+    display: flex;
+
+    .mat-standard-chip {
+        margin: 8px 8px 16px 0;
+    }
+}
+
 .title {
     font-size: 20px;
-    padding: 0 8px;
+    padding: 0 12px;
     font-family: liberation-serif, serif;
 }
 
@@ -51,6 +64,14 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+.drawer_footer {
+    position: absolute;
+    bottom: 0;
+    margin: 16px 0;
+    text-align: center;
+    width: 100%;
 }
 
 .sidenav {
