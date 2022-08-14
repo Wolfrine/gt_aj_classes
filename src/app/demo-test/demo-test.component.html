@@ -1,3 +1,11 @@
-<p>demo-test works!</p>
-
-<pre>{{apiObj | json}}</pre>
+<mat-grid-list [cols]="breakpoint" rowHeight="2:1" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+        <mat-card class="syllabus_card">
+            <mat-card-title>Syllabus</mat-card-title>
+            <mat-card-subtitle>Manage Boards, Standards, Subjects and Chapters</mat-card-subtitle>
+            <mat-card-actions>
+                <button mat-raised-button>Add/Edit</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

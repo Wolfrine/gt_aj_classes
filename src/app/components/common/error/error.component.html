@@ -4,8 +4,16 @@
             Unauthorized access!
         </mat-card-title>
         <mat-card-subtitle>
-            <a href="/login">Sign in - click here to get access.</a>
+            Sign in to get access.
         </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+        <p>
+            Session must have timed out or invalid login is being used. Kindly login again to continue.
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="go_to('login')">Sign in</button>
+    </mat-card-actions>
 </mat-card>

@@ -13,11 +13,17 @@ export class AppService {
     // Default empty structure for User details as obtained after sign in
     userDetails = new Subject();
 
+    setUserDetails(v: any) {
+        this.userDetails.next(v);
+    }
+
     // value["acc_type_code"] = value["acc_type_code"].split(",");
     // this.userDetails.next(value);
 
     constructor(private http: HttpClient) {
     }
+
+
 
 
     //rootURL = 'https://growthtutorials.in/api';

@@ -21,32 +21,47 @@ export class NavBarComponent implements OnInit {
         alert('Open ' + item);
     }
 
+    public go_to(url: string) {
+        this.router.navigate([url]);
+    };
+
+    check_admin_access() {
+        var access = false;
+        if (this.userDetails) {
+            access = this.userDetails['acc_type_code'].every(
+                (x: string) => ['SA', 'ADM'].includes(x)
+            );
+        }
+        return access;
+    };
+
     ngOnInit(): void {
 
         this.userDetails = {
-            fullname: "",
-            firstname: "",
-            acc_type: "",
-            acc_img: "",
-            id: 0
-        };
+            fullname: '',
+            acc_type: 'Guest'
+        }
 
+        // Subsribe to Appservice userDetails subject 
+        // This can be used accross child components
+        this.appservice.userDetails.subscribe(z => { this.userDetails = z });
+
+        // Check session
         this.appservice.getSessionData().subscribe({
             next: (v: any) => {
                 if (v != null && v.hasOwnProperty('acc_type_code')) {
                     v["acc_type_code"] = v["acc_type_code"].split(",");
+
+                    //Set userDetails in AppService
                     this.appservice.userDetails.next(v);
                 }
-                this.userDetails = v;
-                this.appservice.userDetails = this.userDetails;
+                else {
+                    this.router.navigate(['error']);
+                }
                 if (this.userDetails == null) {
                     this.router.navigate(['error']);
                 }
                 else {
-                    if (!this.userDetails['acc_type'] && this.userDetails['acc_type'] != "") {
-                        this.router.navigate(['error']);
-                    }
-
                     setTimeout(() => {
                         this.pageLoad = 0;
                     }, 500);

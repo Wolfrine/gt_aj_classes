@@ -8,15 +8,17 @@ import { AppService } from '../app.service';
 })
 export class DemoTestComponent implements OnInit {
 
-    apiObj = {};
 
-    pobj = { a: 1 };
+    breakpoint = 1;
 
     constructor(private appservice: AppService) { }
 
     ngOnInit(): void {
-        console.log('API call');
-        this.appservice.g_login(this.pobj).subscribe(apiObj => (this.apiObj = apiObj));
+        this.breakpoint = (window.innerWidth <= 400) ? 1 : 4;
     }
 
+
+    onResize(event: any) {
+        this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 4;
+    }
 }

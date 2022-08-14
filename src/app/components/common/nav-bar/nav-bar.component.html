@@ -52,9 +52,17 @@
         <mat-accordion class="accordion">
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
-                    <mat-panel-title (click)="$event.stopPropagation();" (click)="open($event, 'asd')">
-                        <mat-icon>verified</mat-icon>
-                        Attendance
+                    <mat-panel-title (click)="$event.stopPropagation();" (click)="go_to('home')">
+                        <mat-icon>dashboard</mat-icon>
+                        Home
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title (click)="$event.stopPropagation();" (click)="go_to('syllabus')">
+                        <mat-icon>library_books</mat-icon>
+                        Manage Syllabus
                     </mat-panel-title>
                 </mat-expansion-panel-header>
             </mat-expansion-panel>
